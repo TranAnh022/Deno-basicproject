@@ -1,0 +1,24 @@
+
+<h1>Specific Project</h1>
+
+<h1><%= it.project.name %></h1>
+
+<h2>Adding issues </h2>
+
+<form method="POST" action="/projects/<%=it.project.id%>/issues">
+  Issue: <input type="text" name="description" />
+  <input type="submit" value="Create project!" />
+</form>
+
+<h2>List of Issues </h2>
+
+<ul>
+<% it.description.forEach((issue) => { %>
+  <li><%= issue.description %>
+   <form method="POST" action="/projects/<%=it.project.id%>/issues/<%=issue.id%>">
+      <input type="submit" value="Resolve issue" />
+  </form>
+  </li>
+<% }); %>
+</ul>
+<footer> <a href ="/projects">All Projects</a></footer>
