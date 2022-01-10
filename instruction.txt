@@ -1,0 +1,12 @@
+Instruction:
+* This app will build for creating ,deleting a project and an issue related to the project
+
+DATABASE FOR LOCAL HOST :
+hostname: "fanny.db.elephantsql.com",
+  database: "mudpwvkr",
+  user: "mudpwvkr",
+  password: "DAvPbdM5keHpi-E99aIAvMJ0QQ1o9Wge",
+  port: 5432,
+
+Internet address to run the app :
+ https://project-deno.herokuapp.com/

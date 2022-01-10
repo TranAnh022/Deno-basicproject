@@ -14,7 +14,7 @@
 <% it.projects.forEach((project) => { %>
   <li>
   <a href="/projects/<%= project.id %>"><%= project.name %></a>
-  <form method="POST" action="/delete/<%= project.id %>">
+  <form method="POST" action="/projects/<%= project.id %>">
       <input type="submit" value="Remove" />
     </form>
   </li>

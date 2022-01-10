@@ -17,14 +17,14 @@ const handleRequest = async (request) => {
     return await projectController.addProject(request);
   } else if (url.pathname === "/projects" && request.method === "GET") {
     return await projectController.viewProjects(request);
-  }else if (request.method === "POST" && url.pathname.startsWith("/delete/")){
-    return await projectController.removeProject(request);
-  }else if (url.pathname.match("projects/[0-9]+") && request.method === "GET") {
-    return await projectController.viewProject(request);
   }else if (url.pathname.match("projects/[0-9]+/issues/[0-9+]") && request.method === "POST") {
     return await descriptionController.removeIssue(request);
   }else if (url.pathname.match("projects/[0-9]+/issues") && request.method === "POST") {
     return await descriptionController.addIssue(request);
+  }else if (request.method === "POST" && url.pathname.match("projects/[0-9]+")){
+    return await projectController.removeProject(request);
+  }else if (url.pathname.match("projects/[0-9]+") && request.method === "GET") {
+    return await projectController.viewProject(request);
   }else {
     return new Response("Not found", { status: 404 });
   }
@@ -38,4 +38,5 @@ if (Deno.args.length > 0) {
 
 listenAndServe(`:${port}`, handleRequest);
 
+//listenAndServe(":7777", handleRequest);
   
