@@ -1,7 +1,7 @@
 # Deno-basicproject
 
 
-This is a basic project learn from Web program from Aalto University.
+This is a basic project using Deno that I have learned from a Web program course from Aalto University.
 
 The purpose of this app are :
   + Create/delete a new project
